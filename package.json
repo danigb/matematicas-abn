@@ -1,0 +1,99 @@
+{
+  "name": "abn",
+  "version": "3.4.1",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "test:types": "tsc --noUnusedLocals",
+    "css:build": "tailwindcss build src/styles/tailwind.css -o src/styles/index.css",
+    "lint": "tslint --fix 'src/**/*.{ts,tsx}'",
+    "build:analyze": "source-map-explorer 'build/static/js/*.js'",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.27",
+    "@emotion/styled": "^10.0.27",
+    "@types/chroma-js": "^1.4.3",
+    "@types/d3": "^5.7.2",
+    "@types/debug": "^4.1.5",
+    "@types/jest": "^24.9.0",
+    "@types/lodash.debounce": "^4.0.6",
+    "@types/node": "^12.12.24",
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
+    "@types/react-router-dom": "^5.1.3",
+    "@types/topojson": "^3.2.2",
+    "chroma-js": "^2.1.0",
+    "d3": "^5.15.0",
+    "d3-geo-projection": "^2.8.1",
+    "debug": "^4.1.1",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "lodash.debounce": "^4.0.8",
+    "prettier": "^1.19.1",
+    "react": "^16.12.0",
+    "react-css-collapse": "^4.0.4",
+    "react-dom": "^16.12.0",
+    "react-ga": "^2.7.0",
+    "react-responsive": "^8.0.1",
+    "react-router-dom": "^5.1.0",
+    "react-scripts": "^3.3.0",
+    "resize-observer-polyfill": "^1.5.1",
+    "screenfull": "^5.0.0",
+    "standardized-audio-context": "^23.1.2",
+    "tailwind": "^4.0.0",
+    "tailwindcss": "^1.2.0",
+    "typescript": "^3.7.4"
+  },
+  "prettier": {
+    "printWidth": 80,
+    "tabWidth": 2,
+    "singleQuote": false,
+    "semi": true,
+    "newline-before-return": true,
+    "no-duplicate-variable": [
+      true,
+      "check-parameters"
+    ],
+    "no-var-keyword": true,
+    "trailingComma": "all"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "tslint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm run test:types"
+    }
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/react-responsive": "^8.0.2",
+    "serverless": "^1.61.1",
+    "source-map-explorer": "^2.2.2",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.1.0",
+    "tslint-react": "^4.1.0"
+  }
+}
