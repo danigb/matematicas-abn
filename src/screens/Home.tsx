@@ -2,6 +2,7 @@ import React from "react";
 import { Link, RouteComponentProps } from "@reach/router";
 import Layout from "../components/Layout";
 import { Header2, Header3 } from "../components/Theme";
+import useBackgroundColor from "../hooks/useBackgroundColor";
 
 type ItemProps = {
   to?: string;
@@ -10,7 +11,7 @@ type ItemProps = {
 const Item: React.FC<ItemProps> = ({ to, children }) => (
   <li>
     {to ? (
-      <Link to="/calculo-mental/suma-2-unidades">{children}</Link>
+      <Link to={to}>{children}</Link>
     ) : (
       <p className="opacity-50">{children} (próximamente)</p>
     )}
@@ -18,8 +19,9 @@ const Item: React.FC<ItemProps> = ({ to, children }) => (
 );
 
 const Home: React.FC<RouteComponentProps> = () => {
+  useBackgroundColor();
   return (
-    <Layout title="Matemáticas">
+    <Layout title="Matemáticas ABN">
       <Header2>Cálculo mental</Header2>
       <Header3>Números</Header3>
       <ul>
@@ -58,7 +60,9 @@ const Home: React.FC<RouteComponentProps> = () => {
             Suma 3 centenas (100 + 300 + 200 = 600)
           </Link>
         </li>
-        <Item>Suma unidades, decenas y centenas (7 + 80 + 300 = 380)</Item>
+        <Item to="/calculo-mental/suma-unidades-decenas-centenas">
+          Suma unidades, decenas y centenas (7 + 80 + 300 = 380)
+        </Item>
       </ul>
       <Header3>Restas</Header3>
       <ul>

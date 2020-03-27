@@ -4,13 +4,20 @@ import Layout from "../../components/Layout";
 import Exercice from "../../components/Excercice";
 import { Paragraph } from "../../components/Theme";
 import ArithmeticNumbers from "../../components/exercices/ArithmeticNumbers";
-import { sum, randomDecena } from "../../lib/numbers";
+import {
+  sum,
+  randomDigit,
+  randomDecena,
+  randomCentena,
+  shuffle,
+} from "../../lib/numbers";
 
-const generate = () => [randomDecena(), randomDecena()];
+const generate = () =>
+  shuffle([randomDigit(), randomDecena(), randomCentena()]);
 
 const Suma3: React.FC<RouteComponentProps> = () => {
   return (
-    <Layout title="Suma 2 decenas" subtitle="Cálculo mental">
+    <Layout title="Suma unidades, decenas y centenas" subtitle="Cálculo mental">
       <Exercice
         time={3 * 60}
         render={exercice => (
@@ -21,7 +28,10 @@ const Suma3: React.FC<RouteComponentProps> = () => {
           />
         )}
       >
-        <Paragraph>Suma 2 decenas más rápido que puedas</Paragraph>
+        <Paragraph>
+          Tienes que sumar decenas, decenas y unidades, lo más rápido que puedas
+        </Paragraph>
+        <Paragraph>Por ejemplo: 5 + 30 + 400 = 435</Paragraph>
       </Exercice>
     </Layout>
   );

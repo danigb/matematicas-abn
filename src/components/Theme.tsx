@@ -12,22 +12,7 @@ export const Header3: React.FC = ({ children }) => (
 );
 
 export const Paragraph: React.FC = ({ children }) => (
-  <p className="">{children}</p>
-);
-
-type Property = {
-  className?: string;
-  label: string;
-};
-export const Property: React.FC<Property> = ({
-  className,
-  label,
-  children,
-}) => (
-  <div className={className}>
-    <label>{label}</label>
-    {children}
-  </div>
+  <p className="my-2">{children}</p>
 );
 
 export const Actions: React.FC = ({ children }) => (
@@ -45,9 +30,9 @@ export const Button: React.FC<ButtonProps> = ({
 }) => (
   <button
     className={cs({
-      "px-3 mr-6 rounded-full opacity-50 ": true,
-      "bg-transparent border": disabled,
-      "bg-white hover:opacity-100": !disabled,
+      "px-3 mr-6 rounded-full": true,
+      "bg-transparent border opacity-50": disabled,
+      "bg-white": !disabled,
     })}
     disabled={disabled}
     onClick={onClick}

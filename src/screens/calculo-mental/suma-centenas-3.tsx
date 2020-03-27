@@ -3,18 +3,22 @@ import { RouteComponentProps } from "@reach/router";
 import Layout from "../../components/Layout";
 import Exercice from "../../components/Excercice";
 import { Paragraph } from "../../components/Theme";
-import SumNumbers from "../../components/arithmetic/SumNumbers";
-import { randomDigit } from "../../lib/random";
+import ArithmeticNumbers from "../../components/exercices/ArithmeticNumbers";
+import { sum, randomCentena } from "../../lib/numbers";
 
-const size = 3;
-const centena = () => randomDigit() * 100;
+const generate = () => [randomCentena(), randomCentena(), randomCentena()];
 
 const Suma3: React.FC<RouteComponentProps> = () => {
   return (
-    <Layout title="Suma centenas" subtitle="Cálculo mental">
+    <Layout title="Suma 3 centenas" subtitle="Cálculo mental">
       <Exercice
+        time={3 * 60}
         render={exercice => (
-          <SumNumbers size={size} generateNumber={centena} {...exercice} />
+          <ArithmeticNumbers
+            generate={generate}
+            operation={sum}
+            {...exercice}
+          />
         )}
       >
         <Paragraph>Suma 2 centenas más rápido que puedas</Paragraph>

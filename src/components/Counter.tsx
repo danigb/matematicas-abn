@@ -1,6 +1,5 @@
 import React, { useState, useCallback } from "react";
 import useCountdown from "../hooks/useCountdown";
-import { Property } from "./Theme";
 
 const pad = (num: number, digits: number) => `${num}`.padStart(digits, "0");
 
@@ -11,23 +10,26 @@ type Props = {
 
 const Counter: React.FC<Props> = ({ points, seconds }) => {
   const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = seconds - minutes * 60;
   return (
     <div className="flex text-xs opacity-75 mb-4">
-      <Property className="mr-4" label="Puntos: ">
+      <div className="flex mr-2">
+        <label className="mr-1">Puntos:</label>
         {points}
-      </Property>
-      <Property label="Tiempo: ">
-        {pad(minutes, 1)}:{pad(seconds, 2)}
-      </Property>
+      </div>
+      <div className="flex">
+        <label className="mr-1">Tiempo:</label>
+        {pad(minutes, 1)}:{pad(remainingSeconds, 2)}
+      </div>
     </div>
   );
 };
 
 export default Counter;
 
-export function useCounter() {
+export function useCounter(time: number) {
   const [points, setPoints] = useState(0);
-  const { seconds, startTimer } = useCountdown();
+  const { seconds, startTimer } = useCountdown(time);
 
   const addPoint = useCallback(() => {
     setPoints(points + 1);

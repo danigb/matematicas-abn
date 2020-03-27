@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, useLocation } from "@reach/router";
-import useBackgroundColor from "../hooks/useBackgroundColor";
 import { Header1 } from "./Theme";
 
 type Props = {
@@ -9,14 +8,14 @@ type Props = {
 };
 
 const Layout: React.FC<Props> = ({ title, children }) => {
-  const { color } = useBackgroundColor();
-
   const location = useLocation();
 
   return (
-    <div className={`${color} min-h-screen w-full`}>
-      <div className={`${color} max-w-xl  m-auto p-6`}>
-        {location.pathname !== "/" && <Link to="/">&larr; Volver</Link>}
+    <div className={`min-h-screen w-full`}>
+      <div className={`max-w-xl  m-auto p-6`}>
+        {location.pathname !== "/" && (
+          <Link to="/">&larr; Matemáticas ABN</Link>
+        )}
         <Header1>{title}</Header1>
         {children}
       </div>

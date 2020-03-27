@@ -2,15 +2,21 @@ import React, { useState } from "react";
 import cs from "classcat";
 
 type Props = {
+  className?: string;
   onChange: (newValue: string) => void;
   value: string;
   autoFocus?: boolean;
 };
 
-const NumberInput: React.FC<Props> = ({ value, onChange, autoFocus }) => {
+const NumberInput: React.FC<Props> = ({
+  className,
+  value,
+  onChange,
+  autoFocus,
+}) => {
   return (
     <input
-      className={cs("px-1 opacity-50 focus:opacity-100")}
+      className={cs([className, "w-full px-1 opacity-50 focus:opacity-100"])}
       value={value}
       autoFocus={autoFocus}
       onChange={e => onChange(e.target.value)}

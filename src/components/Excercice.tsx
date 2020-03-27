@@ -1,8 +1,8 @@
-import React, { useState, useMemo, useCallback, useEffect } from "react";
-import { Actions, Button, Property } from "./Theme";
-import useBackgroundColor from "../hooks/useBackgroundColor";
+import React, { useState, useMemo, useCallback } from "react";
+import { Actions, Button } from "./Theme";
 import { Link } from "@reach/router";
 import Counter, { useCounter } from "./Counter";
+import useBackgroundColor from "../hooks/useBackgroundColor";
 
 export type ExerciceProps = {
   step: number;
@@ -11,15 +11,16 @@ export type ExerciceProps = {
 };
 
 type Props = {
+  time: number;
   render: React.FC<ExerciceProps>;
 };
 
-const Exercice: React.FC<Props> = ({ children, render }) => {
+const Exercice: React.FC<Props> = ({ time, render, children }) => {
   const [step, setStep] = useState(0);
   const [showResults, setShowResults] = useState(false);
   const [isCurrentValid, setIsCurrentValid] = useState(false);
-  const { setBackground } = useBackgroundColor();
-  const { points, seconds, startTimer } = useCounter();
+  const { points, seconds, startTimer } = useCounter(time);
+  const setBackground = useBackgroundColor();
 
   const start = useCallback(() => {
     setShowResults(false);
