@@ -3,16 +3,16 @@ title: Suma 3 decenas
 date: 2020-03-28
 ---
 
-import ArithmeticNumbers from "../../components/exercices/ArithmeticNumbers";
-import Exercice from "../../components/Exercice";
+import ArithmeticNumbers from "../../components/exercises/ArithmeticNumbers";
+import Exercise from "../../components/Exercise";
 import { rndTens3, sum } from "../../lib/numbers";
 
 # Suma decenas
 
-<Exercice
+<Exercise
   time={3 * 60}
-  render={exercice => (
-    <ArithmeticNumbers {...exercice} generate={rndTens3} operation={sum} />
+  render={Exercise => (
+    <ArithmeticNumbers {...Exercise} generate={rndTens3} operation={sum} />
   )}
 />
 

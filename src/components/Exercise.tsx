@@ -4,7 +4,7 @@ import { Link } from "@reach/router";
 import Counter, { useCounter } from "./Counter";
 import useBackgroundColor from "../hooks/useBackgroundColor";
 
-export type ExerciceProps = {
+export type ExerciseProps = {
   step: number;
   setSolved: (solved: boolean) => void;
   nextStep: () => void;
@@ -12,10 +12,10 @@ export type ExerciceProps = {
 
 type Props = {
   time: number;
-  render: React.FC<ExerciceProps>;
+  render: React.FC<ExerciseProps>;
 };
 
-const Exercice: React.FC<Props> = ({ time, render, children }) => {
+const Exercise: React.FC<Props> = ({ time, render, children }) => {
   const [step, setStep] = useState(0);
   const [showResults, setShowResults] = useState(false);
   const [isCurrentValid, setIsCurrentValid] = useState(false);
@@ -53,7 +53,7 @@ const Exercice: React.FC<Props> = ({ time, render, children }) => {
 
   return (
     <div
-      className={`Exercice my-16 py-8 px-4 border-8 border-black border-l-0 border-r-0 ${
+      className={`Exercise my-16 py-8 px-4 border-8 border-black border-l-0 border-r-0 ${
         isCurrentValid ? "bg-green-500" : "bg-orange-500"
       }`}
     >
@@ -88,4 +88,4 @@ const Exercice: React.FC<Props> = ({ time, render, children }) => {
   );
 };
 
-export default Exercice;
+export default Exercise;

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import NumberInput, { useNumberInput } from "../NumberInput";
-import { ExerciceProps } from "../Exercice";
+import { ExerciseProps } from "../Exercise";
 
-type Props = ExerciceProps & {
+type Props = ExerciseProps & {
   step: number;
   generate: () => number[];
   operation: (a: number, b: number) => number;
@@ -43,7 +43,11 @@ const ArithmeticNumbers: React.FC<Props> = ({
           {numbers.join(" + ") + " = "}
         </div>
         <div className="w-1/3 overflow-hidden">
-          <NumberInput {...input} autoFocus />
+          <NumberInput
+            onSubmit={() => isValid && nextStep()}
+            {...input}
+            autoFocus
+          />
         </div>
       </div>
     </form>

@@ -4,7 +4,7 @@
 /* purgecss end ignore */
 @tailwind utilities;
 
-.Exercice {
+.Exercise {
   font-size: 200%;
 }
 
@@ -21,7 +21,7 @@ h2 {
 }
 
 h4 {
-  @apply text-xl font-bold my-4;
+  @apply text-xl font-bold mt-4;
 }
 
 p {

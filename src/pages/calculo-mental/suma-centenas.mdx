@@ -3,16 +3,16 @@ title: Suma centenas
 date: 2020-03-28
 ---
 
-import ArithmeticNumbers from "../../components/exercices/ArithmeticNumbers";
-import Exercice from "../../components/Exercice";
+import ArithmeticNumbers from "../../components/exercises/ArithmeticNumbers";
+import Exercise from "../../components/Exercise";
 import { rndHundreds2, sum } from "../../lib/numbers";
 
 # Sumar centenas
 
-<Exercice
+<Exercise
   time={3 * 60}
-  render={exercice => (
-    <ArithmeticNumbers {...exercice} generate={rndHundreds2} operation={sum} />
+  render={Exercise => (
+    <ArithmeticNumbers {...Exercise} generate={rndHundreds2} operation={sum} />
   )}
 />
 
