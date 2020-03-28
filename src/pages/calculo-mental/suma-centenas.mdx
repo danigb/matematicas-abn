@@ -1,0 +1,31 @@
+---
+title: Suma centenas
+date: 2020-03-28
+---
+
+import ArithmeticNumbers from "../../components/exercices/ArithmeticNumbers";
+import Exercice from "../../components/Exercice";
+import { rndHundreds2, sum } from "../../lib/numbers";
+
+# Sumar centenas
+
+<Exercice
+  time={3 * 60}
+  render={exercice => (
+    <ArithmeticNumbers {...exercice} generate={rndHundreds2} operation={sum} />
+  )}
+/>
+
+Este ejercicio consiste en sumar, lo más rápido que puedas, dos centenas.
+
+Por ejemplo: 400 + 500 = 900
+
+## Ejercicios relacionados
+
+Antes de éste:
+
+- [Sumar 2 decenas](/calculo-mental/suma-decenas)
+
+Después de éste:
+
+- [Suma centenas](/calculo-mental/suma-centenas)

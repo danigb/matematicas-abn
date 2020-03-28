@@ -1,0 +1,21 @@
+---
+title: Suma decenas
+date: 2020-03-28
+---
+
+import ArithmeticNumbers from "../../components/exercices/ArithmeticNumbers";
+import Exercice from "../../components/Exercice";
+import { rndTens2, sum } from "../../lib/numbers";
+
+# Suma decenas
+
+<Exercice
+  time={3 * 60}
+  render={exercice => (
+    <ArithmeticNumbers {...exercice} generate={rndTens2} operation={sum} />
+  )}
+/>
+
+Este ejercicio consiste en sumar, lo más rápido que puedas, dos decenas:
+
+Por ejemplo: 40 + 50 = 90

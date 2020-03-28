@@ -30,7 +30,7 @@ export const Button: React.FC<ButtonProps> = ({
   onClick
 }) => (
   <button
-    className={`${className} px-3 mr-6 rounded-full
+    className={`${className} px-6 mr-6 rounded-full
       ${disabled ? "bg-transparent border opacity-50" : "bg-white"}`}
     disabled={disabled}
     onClick={onClick}

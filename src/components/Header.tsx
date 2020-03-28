@@ -4,15 +4,11 @@ import React, { useState } from "react";
 const MENU = [
   {
     route: `/`,
-    title: `Home`
+    title: `Ejercicios`
   },
   {
-    route: `/about`,
-    title: `About`
-  },
-  {
-    route: `/contact`,
-    title: `Contact`
+    route: `/colabora`,
+    title: `Colabora`
   }
 ];
 
