@@ -1,42 +1,39 @@
 {
-  "name": "gatsby-starter-tailwind",
-  "description": "Gatsby starter styled with Tailwind",
-  "version": "4.0.0",
-  "author": "Taylor Bryant <taylor@bryant.io>",
+  "name": "matematicas-abn",
+  "description": "Matemáticas ABN: recursos para estudiantes",
+  "version": "1.0.0",
+  "author": "@danigb",
+  "scripts": {
+    "build": "gatsby build",
+    "dev": "gatsby develop",
+    "start": "gatsby develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
   "dependencies": {
+    "@mdx-js/mdx": "^1.5.8",
+    "@mdx-js/react": "^1.5.8",
     "gatsby": "2.20.2",
     "gatsby-plugin-manifest": "2.3.1",
+    "gatsby-plugin-mdx": "^1.1.3",
     "gatsby-plugin-offline": "3.1.0",
     "gatsby-plugin-postcss": "2.2.0",
     "gatsby-plugin-purgecss": "4.0.1",
     "gatsby-plugin-react-helmet": "3.2.0",
     "gatsby-plugin-sharp": "2.5.1",
+    "gatsby-plugin-typescript": "^2.3.1",
+    "gatsby-source-filesystem": "^2.2.2",
     "prop-types": "15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-helmet": "5.2.1"
   },
   "keywords": [
-    "gatsby",
-    "tailwind",
-    "tailwindcss",
-    "purgecss"
+    "math",
+    "mathematics",
+    "abn"
   ],
   "license": "MIT",
-  "scripts": {
-    "analyze:lint": "eslint --ext .jsx --ext .js .",
-    "analyze:prettier": "prettier --list-different \"**/*.{css,js,jsx,json,md}\"",
-    "analyze": "npm run analyze:lint && npm run analyze:prettier",
-    "fix:lint": "eslint --ext .jsx --ext .js . --fix",
-    "fix:prettier": "prettier --write \"**/*.{css,js,jsx,json,md}\"",
-    "fix": "npm run fix:lint && npm run fix:prettier",
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
-  },
   "devDependencies": {
     "@tailwindcss/custom-forms": "0.2.1",
     "autoprefixer": "9.7.4",

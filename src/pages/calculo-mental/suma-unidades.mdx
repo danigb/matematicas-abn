@@ -1,0 +1,24 @@
+---
+title: Suma unidades
+date: 2020-03-28
+---
+
+import Hello from "../../components/Hello";
+import ArithmeticNumbers from "../../components/exercices/ArithmeticNumbers";
+import Exercice from "../../components/Exercice";
+import { twoDigits, sum } from "../../lib/numbers";
+
+# Suma unidades
+
+<Exercice
+  time={3 * 60}
+  render={exercice => (
+    <ArithmeticNumbers {...exercice} generate={twoDigits} operation={sum} />
+  )}
+>
+  <p>Hello2</p>
+</Exercice>
+
+Este ejercicio consiste en sumar, lo más rápido que puedas, cifras de dos números.
+
+Por ejemplo: 4 + 5 = 9

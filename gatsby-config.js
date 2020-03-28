@@ -1,17 +1,31 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Tailwind`,
-    description: `Gatsby starter styled with Tailwind`,
-    author: `@taylorbryant`
+    title: `Matemáticas ABN`,
+    description: `Ejercicios de matemáticas para estudiantes`,
+    author: `Quarantine`
   },
   plugins: [
-    "gatsby-plugin-eslint",
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/pages/`
+      }
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          default: require.resolve("./src/components/Layout.tsx")
+        }
+      }
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-tailwind`,
-        short_name: `starter`,
+        name: `Matemáticas ABN`,
+        short_name: `matematicas-abn`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#4dc0b5`,
@@ -36,6 +50,7 @@ module.exports = {
         purgeOnly: [`src/css/style.css`]
       }
     },
+    `gatsby-plugin-typescript`,
     `gatsby-plugin-offline`
   ]
 };

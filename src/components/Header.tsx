@@ -1,6 +1,21 @@
 import { graphql, useStaticQuery, Link } from "gatsby";
 import React, { useState } from "react";
 
+const MENU = [
+  {
+    route: `/`,
+    title: `Home`
+  },
+  {
+    route: `/about`,
+    title: `About`
+  },
+  {
+    route: `/contact`,
+    title: `Contact`
+  }
+];
+
 function Header() {
   const [isExpanded, toggleExpansion] = useState(false);
   const { site } = useStaticQuery(graphql`
@@ -14,8 +29,8 @@ function Header() {
   `);
 
   return (
-    <header className="bg-teal-700">
-      <div className="flex flex-wrap items-center justify-between max-w-4xl mx-auto p-4 md:p-8">
+    <header className="bg-orange-600">
+      <div className="flex flex-wrap items-center justify-between max-w-4xl mx-auto p-4 md:p-4">
         <Link className="flex items-center no-underline text-white" to="/">
           <svg
             className="fill-current h-8 mr-2 w-8"
@@ -50,20 +65,7 @@ function Header() {
             isExpanded ? `block` : `hidden`
           } md:block md:flex md:items-center w-full md:w-auto`}
         >
-          {[
-            {
-              route: `/`,
-              title: `Home`
-            },
-            {
-              route: `/about`,
-              title: `About`
-            },
-            {
-              route: `/contact`,
-              title: `Contact`
-            }
-          ].map(link => (
+          {MENU.map(link => (
             <Link
               className="block md:inline-block mt-4 md:mt-0 md:ml-6 no-underline text-white"
               key={link.title}
