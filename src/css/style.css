@@ -9,7 +9,6 @@
 }
 
 a {
-  text-decoration: underline;
 }
 
 h1 {
@@ -26,4 +25,12 @@ h4 {
 
 p {
   @apply my-4;
+}
+
+.Home:exercicelist {
+  @apply flex;
+}
+
+.HomeLink {
+  @apply px-4 bg-orange-300 rounded-md mr-4 mb-4;
 }

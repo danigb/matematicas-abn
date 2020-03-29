@@ -3,18 +3,11 @@ title: Suma decenas
 date: 2020-03-28
 ---
 
-import ArithmeticNumbers from "../../components/exercises/ArithmeticNumbers";
-import Exercise from "../../components/Exercise";
-import { rndTens2, sum } from "../../lib/numbers";
+import { SumaDecenas2 } from "../../exercises";
 
-# Suma decenas
+# Sumar decenas
 
-<Exercise
-  time={3 * 60}
-  render={Exercise => (
-    <ArithmeticNumbers {...Exercise} generate={rndTens2} operation={sum} />
-  )}
-/>
+<SumaDecenas2 />
 
 Este ejercicio consiste en sumar, lo más rápido que puedas, dos decenas:
 

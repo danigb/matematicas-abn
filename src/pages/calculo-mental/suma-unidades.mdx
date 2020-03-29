@@ -3,18 +3,11 @@ title: Suma unidades
 date: 2020-03-28
 ---
 
-import ArithmeticNumbers from "../../components/exercises/ArithmeticNumbers";
-import Exercise from "../../components/Exercise";
-import { rndDigits2, sum } from "../../lib/numbers";
+import { SumaUnidades2 } from "../../exercises";
 
-# Suma unidades
+# Sumar unidades
 
-<Exercise
-  time={3 * 60}
-  render={Exercise => (
-    <ArithmeticNumbers {...Exercise} generate={rndDigits2} operation={sum} />
-  )}
-/>
+<SumaUnidades2 />
 
 Este ejercicio consiste en sumar, lo más rápido que puedas, cifras de dos números.
 
