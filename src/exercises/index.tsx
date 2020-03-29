@@ -15,7 +15,7 @@ export const rndDigits3 = () => [
 
 export const SumaUnidades2 = () => (
   <Exercise
-    time={3 * 60}
+    time={TIME_NORMAL}
     render={Exercise => (
       <ArithmeticNumbers {...Exercise} generate={rndDigits2} operation={sum} />
     )}
@@ -24,7 +24,7 @@ export const SumaUnidades2 = () => (
 
 export const SumaUnidades3 = () => (
   <Exercise
-    time={3 * 60}
+    time={TIME_NORMAL}
     render={Exercise => (
       <ArithmeticNumbers {...Exercise} generate={rndDigits3} operation={sum} />
     )}
@@ -37,7 +37,7 @@ export const rndTens3 = () => [rndTens(), rndTens(), rndTens()];
 
 export const SumaDecenas2 = () => (
   <Exercise
-    time={3 * 60}
+    time={TIME_NORMAL}
     render={Exercise => (
       <ArithmeticNumbers {...Exercise} generate={rndTens2} operation={sum} />
     )}
@@ -46,7 +46,7 @@ export const SumaDecenas2 = () => (
 
 export const SumaDecenas3 = () => (
   <Exercise
-    time={3 * 60}
+    time={TIME_NORMAL}
     render={Exercise => (
       <ArithmeticNumbers {...Exercise} generate={rndTens3} operation={sum} />
     )}
@@ -59,7 +59,7 @@ export const rndHundreds3 = () => [rndHundreds(), rndHundreds(), rndHundreds()];
 
 export const SumaCentenas2 = () => (
   <Exercise
-    time={3 * 60}
+    time={TIME_NORMAL}
     render={Exercise => (
       <ArithmeticNumbers
         {...Exercise}
@@ -72,7 +72,7 @@ export const SumaCentenas2 = () => (
 
 export const SumaCentenas3 = () => (
   <Exercise
-    time={3 * 60}
+    time={TIME_NORMAL}
     render={Exercise => (
       <ArithmeticNumbers
         {...Exercise}
