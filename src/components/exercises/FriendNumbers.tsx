@@ -30,7 +30,7 @@ const FriendNumbers: React.FC<Props> = ({
 
   return (
     <form
-      className="flex"
+      className="flex flex-wrap"
       onSubmit={e => {
         e.preventDefault();
         if (isValid) {

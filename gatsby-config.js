@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Matemáticas ABN`,
     description: `Ejercicios de matemáticas para estudiantes`,
-    author: `Quarantine`
+    author: `danigb & vegalina`
   },
   plugins: [
     {
@@ -28,7 +28,7 @@ module.exports = {
         short_name: `matematicas-abn`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#4dc0b5`,
+        theme_color: `#fbd38d`,
         display: `minimal-ui`,
         icon: `src/images/favicon-32x32.png`
       }

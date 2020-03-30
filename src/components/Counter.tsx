@@ -12,7 +12,7 @@ const Counter: React.FC<Props> = ({ points, seconds }) => {
   const minutes = Math.floor(seconds / 60);
   const remainingSeconds = seconds - minutes * 60;
   return (
-    <div className="flex opacity-75 mb-4">
+    <div className="flex flex-col opacity-75 mb-4">
       <div className="flex mr-2">
         <label className="mr-1">Puntos:</label>
         {points}
