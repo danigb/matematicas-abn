@@ -39,7 +39,9 @@ const FriendNumbers: React.FC<Props> = ({
       }}
     >
       <div className="whitespace-no-wrap mr-4">
-        El amigo del {question} es el
+        El amigo del
+        <span className="text-6xl mx-2">{question}</span>
+        es el
       </div>
       <NumberInput
         onSubmit={() => isValid && nextStep()}

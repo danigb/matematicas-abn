@@ -38,11 +38,11 @@ const ArithmeticNumbers: React.FC<Props> = ({
         }
       }}
     >
-      <div className="flex row text-3xl flex-no-wrap">
+      <div className="flex flex-col lg:flex-row text-3xl">
         <div className="flex-grow text-right whitespace-no-wrap mr-2">
           {numbers.join(" + ") + " = "}
         </div>
-        <div className="w-1/3 overflow-hidden">
+        <div className="w-full lg:w-1/3 overflow-hidden">
           <NumberInput
             onSubmit={() => isValid && nextStep()}
             {...input}

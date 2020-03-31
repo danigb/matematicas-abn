@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 type Props = {
   className?: string;
   onChange: (newValue: string) => void;
   onSubmit: () => void;
   value: string;
+  reference: React.MutableRefObject<HTMLInputElement>;
   autoFocus?: boolean;
 };
 
@@ -13,10 +14,12 @@ const NumberInput: React.FC<Props> = ({
   value,
   onChange,
   onSubmit,
+  reference,
   autoFocus
 }) => {
   return (
     <input
+      ref={reference}
       type="number"
       className={`w-full px-1 opacity-50 focus:opacity-100 ${className}`}
       value={value}
@@ -29,14 +32,20 @@ const NumberInput: React.FC<Props> = ({
 
 export function useNumberInput() {
   const [value, setValue] = useState("");
+  const reference = useRef<HTMLInputElement>();
 
   const onChange = (newValue: string) => {
     setValue(newValue);
   };
 
-  const clear = () => setValue("");
+  const clear = () => {
+    setValue("");
+    if (reference.current) {
+      reference.current.focus();
+    }
+  };
 
-  return { value, onChange, clear };
+  return { value, onChange, clear, reference };
 }
 
 export default NumberInput;

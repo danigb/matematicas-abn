@@ -3,8 +3,13 @@ import { rndDigitZero, rndInteger, sum, rndDigit } from "../lib/numbers";
 import Exercise from "../components/Exercise";
 import FriendNumbers from "../components/exercises/FriendNumbers";
 import ArithmeticNumbers from "../components/exercises/ArithmeticNumbers";
+import CountPoints from "../components/exercises/CountPoints";
 
 const TIME_NORMAL = 1 * 60;
+
+export const ContarPuntos = () => (
+  <Exercise time={TIME_NORMAL} render={props => <CountPoints {...props} />} />
+);
 
 export const rndDigits2 = () => [rndDigitZero(), rndDigitZero()];
 export const rndDigits3 = () => [
