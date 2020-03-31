@@ -5,7 +5,7 @@ import FriendNumbers from "../components/exercises/FriendNumbers";
 import ArithmeticNumbers from "../components/exercises/ArithmeticNumbers";
 import CountPoints from "../components/exercises/CountPoints";
 
-const TIME_NORMAL = 1 * 60;
+const TIME_NORMAL = 3 * 60;
 
 export const ContarPuntos = () => (
   <Exercise time={TIME_NORMAL} render={props => <CountPoints {...props} />} />
