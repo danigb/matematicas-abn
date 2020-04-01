@@ -15,7 +15,7 @@
     "@mdx-js/react": "^1.5.8",
     "gatsby": "2.20.2",
     "gatsby-plugin-manifest": "2.3.1",
-    "gatsby-plugin-mdx": "^1.1.3",
+    "gatsby-plugin-mdx": "^1.1.4",
     "gatsby-plugin-offline": "3.1.0",
     "gatsby-plugin-postcss": "2.2.0",
     "gatsby-plugin-purgecss": "4.0.1",
@@ -26,7 +26,8 @@
     "prop-types": "15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-helmet": "5.2.1"
+    "react-helmet": "5.2.1",
+    "use-sound": "^1.0.1"
   },
   "keywords": [
     "math",

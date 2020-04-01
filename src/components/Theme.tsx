@@ -1,13 +1,16 @@
 import React from "react";
 
 export const Header1: React.FC = ({ children }) => (
-  <h1 className="text-3xl mb-4">{children}</h1>
+  <h1 className="text-3xl mb-4 border-gray border-b">{children}</h1>
 );
 export const Header2: React.FC = ({ children }) => (
   <h1 className="text-2xl mt-2">{children}</h1>
 );
 export const Header3: React.FC = ({ children }) => (
   <h1 className="text-xl mt-4">{children}</h1>
+);
+export const Header4: React.FC = ({ children }) => (
+  <h1 className="text-xl font-bold mt-4">{children}</h1>
 );
 
 export const Paragraph: React.FC = ({ children }) => (

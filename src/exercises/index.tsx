@@ -140,3 +140,23 @@ export const RestaUnidades2 = () => (
     )}
   />
 );
+
+const multiply = (a: number, b: number) => a * b;
+const preguntaMultiplica = (numbers: string[]) => numbers.join(" x ") + " = ";
+type MultiplicaPorProps = {
+  num: number;
+};
+
+export const MultiplicaPor: React.FC<MultiplicaPorProps> = ({ num }) => (
+  <Exercise
+    time={TIME_NORMAL}
+    render={Exercise => (
+      <ArithmeticNumbers
+        {...Exercise}
+        generate={() => [rndInteger(1, 10), num]}
+        operation={multiply}
+        questionString={preguntaMultiplica}
+      />
+    )}
+  />
+);
