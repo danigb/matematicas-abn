@@ -15,7 +15,24 @@ type Props = {
   render: React.FC<ExerciseProps>;
 };
 
-const Exercise: React.FC<Props> = ({ time, render, children }) => {
+type ExerciceContainerProps = {
+  isValid: boolean;
+};
+
+export const ExerciceContainer: React.FC<ExerciceContainerProps> = ({
+  isValid,
+  children
+}) => (
+  <div
+    className={`Exercise my-16 py-8 px-4 border-8 border-black border-l-0 border-r-0 ${
+      isValid ? "bg-green-500" : "bg-orange-500"
+    }`}
+  >
+    {children}
+  </div>
+);
+
+const Exercise: React.FC<Props> = ({ time, render }) => {
   const [step, setStep] = useState(0);
   const [showResults, setShowResults] = useState(false);
   const [isCurrentValid, setIsCurrentValid] = useState(false);
@@ -52,11 +69,7 @@ const Exercise: React.FC<Props> = ({ time, render, children }) => {
   }, [step, render, setSolved, nextStep]);
 
   return (
-    <div
-      className={`Exercise my-16 py-8 px-4 border-8 border-black border-l-0 border-r-0 ${
-        isCurrentValid ? "bg-green-500" : "bg-orange-500"
-      }`}
-    >
+    <ExerciceContainer isValid={isCurrentValid}>
       {showResults ? (
         <div>
           Has conseguido {step} puntos
@@ -84,7 +97,7 @@ const Exercise: React.FC<Props> = ({ time, render, children }) => {
           </Actions>
         </div>
       )}
-    </div>
+    </ExerciceContainer>
   );
 };
 

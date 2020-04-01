@@ -91,10 +91,22 @@ export const RESTAS: Group = {
 const NUM = [2, 3, 4, 5, 6, 7, 8, 9, 10];
 export const MULTIPLICACIONES: Group = {
   title: "Multiplicaciones",
-  description: "Aprende la tabla de multiplicar",
+  description: "Practica la multiplicación de cabeza",
   exercises: NUM.map(num => ({
     title: `Multiplica por ${num}`,
     url: `/calculo-mental/multiplica-por-${num}`,
     description: `${num} x ${num} = ${num * num}`
   }))
+};
+
+export const TABLA_DE_MULTIPLICAR: Group = {
+  title: "Tabla de multiplicar",
+  description: "Aprende la tabla de multiplicar",
+  exercises: [
+    {
+      title: `La tabla del...`,
+      url: `/tabla-de-multiplicar/tabla-del`,
+      description: `Por ejemplo, la del 2: 1, 2, 4, 8...`
+    }
+  ]
 };

@@ -1,5 +1,9 @@
 import React from "react";
 
+type Props = {
+  className?: string;
+};
+
 export const Header1: React.FC = ({ children }) => (
   <h1 className="text-3xl mb-4 border-gray border-b">{children}</h1>
 );
@@ -17,8 +21,8 @@ export const Paragraph: React.FC = ({ children }) => (
   <p className="my-2">{children}</p>
 );
 
-export const Actions: React.FC = ({ children }) => (
-  <div className="mt-4">{children}</div>
+export const Actions: React.FC<Props> = ({ className, children }) => (
+  <div className={`${className} flex mt-4`}>{children}</div>
 );
 
 type ButtonProps = {
@@ -33,7 +37,7 @@ export const Button: React.FC<ButtonProps> = ({
   onClick
 }) => (
   <button
-    className={`${className} px-6 mr-6 rounded-full
+    className={`${className} px-6 mr-4 rounded-full
       ${disabled ? "bg-transparent border opacity-50" : "bg-white"}`}
     disabled={disabled}
     onClick={onClick}

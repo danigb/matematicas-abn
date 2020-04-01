@@ -232,8 +232,9 @@ module.exports = {
       default: "1"
     },
     fontFamily: {
-      cursive: "'Delius', cursive",
+      cursive: ["Delius", "serif"],
       sans: [
+        "Open Sans",
         "system-ui",
         "-apple-system",
         "BlinkMacSystemFont",
@@ -351,6 +352,9 @@ module.exports = {
     },
     minWidth: {
       "0": "0",
+      "4": "4rem",
+      "6": "6rem",
+      "8": "8rem",
       "1/4": "25%",
       "1/2": "50%",
       "3/4": "75%",

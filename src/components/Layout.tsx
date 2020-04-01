@@ -7,7 +7,7 @@ const Layout: React.FC = ({ children }) => (
   <div className="flex flex-col min-h-screen text-gray-900 font-cursive">
     <Helmet>
       <link
-        href="https://fonts.googleapis.com/css2?family=Delius&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Delius&family=Open+Sans&display=swap"
         rel="stylesheet"
       />
     </Helmet>

@@ -9,6 +9,7 @@ import {
   SUMAS,
   RESTAS,
   MULTIPLICACIONES,
+  TABLA_DE_MULTIPLICAR,
   Group
 } from "../exercises/list";
 
@@ -56,6 +57,7 @@ const Indice: React.FC = () => {
       <ExerciseGroup {...NUMEROS_AMIGOS} />
       <ExerciseGroup {...SUMAS} />
       <ExerciseGroup {...RESTAS} />
+      <ExerciseGroup {...TABLA_DE_MULTIPLICAR} />
       <ExerciseGroup {...MULTIPLICACIONES} />
     </Layout>
   );
