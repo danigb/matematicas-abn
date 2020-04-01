@@ -37,6 +37,6 @@ ul li {
 }
 
 .HomeLink {
-  @apply lg:w-1/3 px-4 bg-orange-300 rounded-md mr-4 mb-4;
+  @apply px-4 bg-orange-300 rounded-md mr-4 mb-4;
 }
 /* purgecss end ignore */

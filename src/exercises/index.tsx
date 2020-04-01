@@ -90,7 +90,7 @@ export const SumaCentenas3 = () => (
 
 const friend10 = (n: number) => 10 - n;
 const friend100 = (n: number) => 100 - n;
-const rndInt0To100 = rndInteger(0, 100);
+const rndInt0To100 = () => rndInteger(0, 100);
 
 export const AmigosDel10: React.FC = () => (
   <Exercise
@@ -115,6 +115,28 @@ export const AmigosDel100: React.FC = () => (
     time={TIME_NORMAL}
     render={status => (
       <FriendNumbers generate={rndInt0To100} solution={friend100} {...status} />
+    )}
+  />
+);
+
+const preguntaResta = (numbers: string[]) => numbers.join(" - ") + " = ";
+const substract = (a: number, b: number) => a - b;
+
+const rndDigits2Ordered = () => {
+  const a = rndInteger(1, 10);
+  const b = rndInteger(0, a);
+  return [a, b];
+};
+export const RestaUnidades2 = () => (
+  <Exercise
+    time={TIME_NORMAL}
+    render={Exercise => (
+      <ArithmeticNumbers
+        {...Exercise}
+        generate={rndDigits2Ordered}
+        operation={substract}
+        questionString={preguntaResta}
+      />
     )}
   />
 );

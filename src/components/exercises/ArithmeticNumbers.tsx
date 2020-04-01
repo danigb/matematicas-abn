@@ -2,10 +2,14 @@ import React, { useEffect, useState } from "react";
 import NumberInput, { useNumberInput } from "../NumberInput";
 import { ExerciseProps } from "../Exercise";
 
+const defaultQuestionString = (numbers: number[]) =>
+  numbers.join(" + ") + " = ";
+
 type Props = ExerciseProps & {
   step: number;
   generate: () => number[];
   operation: (a: number, b: number) => number;
+  questionString?: (nums: []) => string;
 };
 
 const ArithmeticNumbers: React.FC<Props> = ({
@@ -13,10 +17,13 @@ const ArithmeticNumbers: React.FC<Props> = ({
   nextStep,
   step,
   generate,
-  operation
+  operation,
+  questionString
 }) => {
   const [numbers, setNumbers] = useState(generate());
   const input = useNumberInput();
+
+  const question = questionString || defaultQuestionString;
 
   useEffect(() => {
     setNumbers(generate());
@@ -40,7 +47,7 @@ const ArithmeticNumbers: React.FC<Props> = ({
     >
       <div className="flex flex-col lg:flex-row text-3xl">
         <div className="flex-grow text-right whitespace-no-wrap mr-2">
-          {numbers.join(" + ") + " = "}
+          {question(numbers)}
         </div>
         <div className="w-full lg:w-1/3 overflow-hidden">
           <NumberInput

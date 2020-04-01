@@ -1,11 +1,11 @@
 export function rndInteger(min: number, max: number) {
-  return () => Math.floor(Math.random() * (max - min)) + min;
+  return Math.floor(Math.random() * (max - min)) + min;
 }
 
-export const rndDigit = rndInteger(1, 9);
-export const rndDigitTen = rndInteger(1, 10);
-export const rndDigitZero = rndInteger(0, 9);
-export const rndDigitZeroTen = rndInteger(0, 10);
+export const rndDigit = () => rndInteger(1, 9);
+export const rndDigitTen = () => rndInteger(1, 10);
+export const rndDigitZero = () => rndInteger(0, 9);
+export const rndDigitZeroTen = () => rndInteger(0, 10);
 
 export function sum(a: number, b: number) {
   return a + b;
