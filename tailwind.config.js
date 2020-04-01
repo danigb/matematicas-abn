@@ -232,6 +232,7 @@ module.exports = {
       default: "1"
     },
     fontFamily: {
+      cursive: "'Delius', cursive",
       sans: [
         "system-ui",
         "-apple-system",
