@@ -2,10 +2,13 @@ import React, { useState, useEffect } from "react";
 import { ExerciceContainer } from "../Exercise";
 import { Header2, Actions, Button } from "../Theme";
 import { Link } from "gatsby";
-import InputNum from "./InputNum";
+import InputNum, { InputState } from "./InputNum";
 
 const NUMS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const EMPTY = NUMS.map(n => "");
+const EMPTY = NUMS.map((n) => "");
+
+const getState = (value: string, expected: string): InputState =>
+  !value ? "empty" : value === expected ? "valid" : "invalid";
 
 const MultiplyRow: React.FC = () => {
   const [path, setPath] = useState("");
@@ -26,7 +29,7 @@ const MultiplyRow: React.FC = () => {
     setStarted(false);
   };
 
-  const expected = NUMS.map(n => `${num * n}`);
+  const expected = NUMS.map((n) => `${num * n}`);
   const isValid = expected.join(",") === values.join(",");
 
   useEffect(() => {
@@ -55,9 +58,9 @@ const MultiplyRow: React.FC = () => {
                     <InputNum
                       className={`w-16`}
                       pos={i}
-                      onChange={value => setValue(value, i)}
+                      onChange={(value) => setValue(value, i)}
                       value={values[i]}
-                      expected={expected[i]}
+                      state={getState(values[i], expected[i])}
                     />
                   </div>
                 ))}
@@ -74,7 +77,7 @@ const MultiplyRow: React.FC = () => {
           ) : (
             <>
               <div className="flex flex-col">
-                {NUMS.map(n => (
+                {NUMS.map((n) => (
                   <div>
                     {n} x {num} = {n * num}
                   </div>
@@ -93,7 +96,7 @@ const MultiplyRow: React.FC = () => {
         <>
           <Header2>¿Qué tabla que quieres practicar?</Header2>
           <div className={`flex flex-col items-start`}>
-            {NUMS.map(n => (
+            {NUMS.map((n) => (
               <Link
                 key={n}
                 onClick={() => setNum(n)}

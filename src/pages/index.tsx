@@ -9,8 +9,9 @@ import {
   SUMAS,
   RESTAS,
   MULTIPLICACIONES,
+  MUTLIPLICACION_CON_REJILLA,
   TABLA_DE_MULTIPLICAR,
-  Group
+  Group,
 } from "../exercises/list";
 
 const List: React.FC = ({ children }) => (
@@ -35,7 +36,7 @@ const ExerciseGroup: React.FC<Group> = ({ title, description, exercises }) => {
       {description && <Paragraph>{description}</Paragraph>}
       {isOpen && (
         <div className="flex flex-col flex-wrap lg:flex-row">
-          {exercises.map(exercise => (
+          {exercises.map((exercise) => (
             <Item key={exercise.url} {...exercise} />
           ))}
         </div>
@@ -55,9 +56,14 @@ const Indice: React.FC = () => {
       <Paragraph>Pensado para 1º y 2º de primaria</Paragraph>
 
       <ExerciseGroup {...NUMEROS_AMIGOS} />
+      <Header1>Sumas y restas</Header1>
+      <Paragraph>Pensado para 1º y 2º de primaria</Paragraph>
       <ExerciseGroup {...SUMAS} />
       <ExerciseGroup {...RESTAS} />
+      <Header1>Multiplicaciones</Header1>
+      <Paragraph>Pensado para 2º y 3º de primaria</Paragraph>
       <ExerciseGroup {...TABLA_DE_MULTIPLICAR} />
+      <ExerciseGroup {...MUTLIPLICACION_CON_REJILLA} />
       <ExerciseGroup {...MULTIPLICACIONES} />
     </Layout>
   );
